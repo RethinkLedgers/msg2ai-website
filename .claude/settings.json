@@ -1,0 +1,158 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "tools:Bash AND command:npm run build",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint && npm run test"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Edit AND filePath:**/*.prisma",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/prisma-guard.js"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Edit AND filePath:**/.env*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '⚠️  WARNING: Editing environment files. Ensure no secrets are committed to version control.'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "tools:Edit AND filePath:**/*.{ts,tsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsc --noEmit"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Write AND filePath:**/api/**/*.ts",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint -- --fix"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Edit AND filePath:**/middleware.ts",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run build"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Write AND filePath:**/app/**/page.tsx",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run build || echo 'Build check failed - verify page.tsx structure'"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Write AND filePath:**/components/**/*.{ts,tsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run lint -- --fix"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Edit AND filePath:**/lib/actions/**/*.ts",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx tsc --noEmit && echo '✅ Database actions validated' && printf '\\a'"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:TodoWrite",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📝 Todo list updated' && printf '\\a'"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Bash AND command:*build*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🏗️ Build operation completed' && printf '\\a'"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Bash AND command:*test*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🧪 Test operation completed' && printf '\\a'"
+          }
+        ]
+      },
+      {
+        "matcher": "tools:Bash AND command:*lint*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🔍 Lint operation completed' && printf '\\a'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "content:*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🔔 User input received - processing task...'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "content:*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ Task completed' && afplay /System/Library/Sounds/Glass.aiff && say 'Task Complete'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "content:*input*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '❓ User input required' && afplay /System/Library/Sounds/Ping.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}

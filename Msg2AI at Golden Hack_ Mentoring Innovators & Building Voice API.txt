@@ -1,0 +1,29 @@
+Msg2AI at Golden Hack: Mentoring Innovators & Building a Voice API
+At Msg2AI, we’re dedicated to making AI simple and useful for everyone. Last week, we had the incredible opportunity to join the Golden Hack Impact Weekend, hosted by the Center for Entrepreneurship and Innovation (CEI) at the University of North Carolina Charlotte (UNCC). This event brought together students from various backgrounds to tackle real-world challenges, brainstorm innovative ideas, and learn from experienced mentors like us.
+Supporting Students with AI Ideas
+Our team was pleased to guide talented students as they worked on AI projects designed to support universities. Their projects aimed to improve how students interact with their schools, simplify academic processes, and enhance the overall student experience. We helped them shape ideas that would make university life smoother and more engaging—from the first days of orientation to ongoing student support.
+Making University Life Easier
+Throughout the weekend, students explored how AI could help with everyday challenges, from organizing events to managing schoolwork. They created thoughtful ideas about how AI could make university life more personal, supportive, and efficient.
+Real-World Problem Solving
+Our role was to help students work through real-life challenges and find practical, helpful solutions. Watching their ideas develop from early concepts into refined, actionable projects was inspiring, especially seeing the enthusiasm and creativity they brought to each step.
+
+
+Event Highlights: Learning and Collaboration
+The event began with inspiring talks from industry leaders like Bart Cant and Jim Morris, who shared insights on the future of AI. These sessions set a positive tone for the weekend, motivating students to dream big while thinking practically.
+As students worked through their projects, they joined workshops and team sessions encouraging collaboration and fresh ideas. Golden Hack fostered a great environment where everyone felt encouraged to learn, share, and build meaningful solutions together.
+Launching Our Real-Time Voice API
+The Golden Hack weekend wasn’t just a chance to mentor—it also inspired us to innovate! During the event, we developed a new Real-Time Voice API for our platform, which enables voice-activated, real-time conversations. This feature lets customer support teams and call centers use AI to respond to questions through voice, making interactions faster and more engaging.
+Our Voice API bridges the gap between people and AI, creating a smooth, natural way to communicate. Whether for education or customer support, this API opens new ways for users to connect.
+
+
+
+
+The Future of AI in Education
+
+The projects at Golden Hack highlighted just how much AI can improve the student experience. With AI, students can get personalized support for managing coursework, planning events, and staying organized. Our new Real-Time Voice API will further expand these possibilities by offering faster, more accessible communication solutions to schools and beyond.
+A Big Thank You to Golden Hack
+
+We’re incredibly grateful to the Center for Entrepreneurship and Innovation for hosting such an inspiring event and to all the mentors, judges, and students who made Golden Hack a success. It was a privilege to witness the creativity and passion of these young innovators.
+At Msg2AI, we’re excited to keep advancing AI, making it more helpful and accessible. To learn more about how our platform is bringing AI-driven solutions to life, visit us at www.msg2ai.xyz.
+
+

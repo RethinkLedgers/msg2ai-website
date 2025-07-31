@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Unique Blog Images</title>
+    <style>
+        body { 
+            background: #1f2937; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            text-align: center;
+        }
+        .image-container { 
+            display: inline-block; 
+            margin: 20px; 
+            text-align: center;
+        }
+        canvas { 
+            border: 2px solid #374151; 
+            border-radius: 8px; 
+            margin: 10px;
+        }
+        .download-btn {
+            background: #8b5cf6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Unique Blog Images</h1>
+    <p>Click each download button to save the unique image for each blog post</p>
+    
+    <div id="images"></div>
+    
+    <script>
+        const blogPosts = [
+            {
+                id: 'agentic-future-travel-hotels',
+                title: 'Agentic Future Travel & Hotels',
+                colors: ['#8B5CF6', '#EC4899', '#6366F1'],
+                description: 'AI and blockchain in hospitality'
+            },
+            {
+                id: 'ai-hospitality-guest-operations',
+                title: 'AI in Hospitality',
+                colors: ['#10B981', '#059669', '#047857'],
+                description: 'Guest experience and operations'
+            },
+            {
+                id: 'venture135-conference-transformation',
+                title: 'Venture135 Conference',
+                colors: ['#F59E0B', '#D97706', '#B45309'],
+                description: 'AI Assistant transformation'
+            },
+            {
+                id: 'ai-powered-guest-experiences',
+                title: 'AI-Powered Guest Experiences',
+                colors: ['#3B82F6', '#2563EB', '#1D4ED8'],
+                description: 'Hospitality innovation'
+            },
+            {
+                id: 'golden-hack-voice-api',
+                title: 'Golden Hack Voice API',
+                colors: ['#EF4444', '#DC2626', '#B91C1C'],
+                description: 'Mentoring and voice technology'
+            },
+            {
+                id: 'brand-awareness-ai-messaging',
+                title: 'Brand Awareness AI Messaging',
+                colors: ['#8B5CF6', '#7C3AED', '#6D28D9'],
+                description: 'Text messaging for hotels'
+            }
+        ];
+
+        function createUniqueImage(post) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+
+            // Create unique gradient background
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, post.colors[0]);
+            gradient.addColorStop(0.5, post.colors[1]);
+            gradient.addColorStop(1, post.colors[2]);
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add unique pattern based on post ID
+            ctx.globalAlpha = 0.1;
+            const patternSize = 30;
+            for (let i = 0; i < canvas.width; i += patternSize) {
+                for (let j = 0; j < canvas.height; j += patternSize) {
+                    if ((i + j) % (patternSize * 2) === 0) {
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(i, j, patternSize, patternSize);
+                    }
+                }
+            }
+
+            // Add title text
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 36px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Split title into lines
+            const words = post.title.split(' ');
+            const lines = [];
+            let currentLine = '';
+            
+            for (let word of words) {
+                const testLine = currentLine + word + ' ';
+                const metrics = ctx.measureText(testLine);
+                if (metrics.width > canvas.width - 60) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine = testLine;
+                }
+            }
+            lines.push(currentLine.trim());
+
+            // Draw text lines
+            const lineHeight = 45;
+            const startY = canvas.height / 2 - (lines.length * lineHeight) / 2;
+            
+            lines.forEach((line, index) => {
+                ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);
+            });
+
+            // Add description
+            ctx.font = '18px Arial';
+            ctx.globalAlpha = 0.8;
+            ctx.fillText(post.description, canvas.width / 2, canvas.height - 40);
+
+            return canvas;
+        }
+
+        blogPosts.forEach(post => {
+            const container = document.createElement('div');
+            container.className = 'image-container';
+            
+            const title = document.createElement('h3');
+            title.textContent = post.title;
+            title.style.marginBottom = '10px';
+            
+            const canvas = createUniqueImage(post);
+            
+            const downloadLink = document.createElement('a');
+            downloadLink.href = canvas.toDataURL('image/jpeg', 0.9);
+            downloadLink.download = `${post.id}.jpg`;
+            downloadLink.className = 'download-btn';
+            downloadLink.textContent = `Download ${post.id}.jpg`;
+            
+            container.appendChild(title);
+            container.appendChild(canvas);
+            container.appendChild(downloadLink);
+            
+            document.getElementById('images').appendChild(container);
+        });
+    </script>
+</body>
+</html> 
