@@ -52,8 +52,8 @@ Thumbs.db
 *.rar
 *.tar.gz
 
-# Generated documentation
-docs/
+# Generated documentation (keeping our docs/blog folder)
+# docs/
 
 # Coverage directory used by tools like istanbul
 coverage/
