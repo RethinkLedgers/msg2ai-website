@@ -54,8 +54,8 @@ export const blogPosts = [
     <p>So, the next time you check into a hotel, don't be surprised if your room already feels like home. After all, in the new agentic future, the world of hospitality is designed just for you.</p>`,
     videoUrl: 'https://youtube.com/watch?v=agentic-future-demo',
     images: [
-      '/images/blog/agentic-future-travel-hotels.jpg',
-      '/images/blog/venture135-conference-transformation.jpg'
+      '/images/blog/homepage_hero_blog_en_agentic_future_travel_hero.png',
+      '/images/blog/agentic-future-travel-hotels.jpg'
     ]
   },
   {
@@ -122,8 +122,8 @@ export const blogPosts = [
     <p>If you're interested in learning more about how our AI Assistant can elevate your next event, feel free to reach out to us. We're just getting started in revolutionizing conferences—one AI-powered interaction at a time.</p>`,
     videoUrl: 'https://youtube.com/watch?v=venture135-demo',
     images: [
-      '/images/blog/venture135-conference-transformation.jpg',
-      '/images/blog/golden-hack-voice-api.jpg'
+      '/images/blog/homepage_hero_blog_en_venture135_conference_hero.png',
+      '/images/blog/venture135-conference-transformation.jpg'
     ]
   },
   {
@@ -150,8 +150,8 @@ export const blogPosts = [
     <p>By handling routine inquiries and requests, AI assistants free up human staff to focus on more complex guest needs and provide the personal touch that technology cannot replicate. This balance of automation and human interaction creates the optimal guest experience.</p>`,
     videoUrl: 'https://youtube.com/watch?v=ai-concierge-demo',
     images: [
-      '/images/blog/ai-powered-guest-experiences.jpg',
-      '/images/blog/brand-awareness-ai-messaging.jpg'
+      '/images/blog/homepage_hero_blog_en_elevating_hospitality_hero.png',
+      '/images/blog/ai-powered-guest-experiences.jpg'
     ]
   },
   {
@@ -185,8 +185,8 @@ export const blogPosts = [
     <p>We're excited to continue mentoring and collaborating with the next generation of AI innovators, and we can't wait to see what they'll build next.</p>`,
     videoUrl: 'https://youtube.com/watch?v=golden-hack-voice-api',
     images: [
-      '/images/blog/golden-hack-voice-api.jpg',
-      '/images/blog/agentic-future-travel-hotels.jpg'
+      '/images/blog/homepage_hero_blog_en_golden_hack_voice_api_hero.png',
+      '/images/blog/golden-hack-voice-api.jpg'
     ]
   },
   {
