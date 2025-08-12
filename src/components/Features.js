@@ -41,8 +41,14 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="relative py-20 px-4 sm:px-6 lg:px-8">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{
+          backgroundImage: 'url(/images/homepage_features_background.png)'
+        }}
+      ></div>
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose AI Ambassador?</h2>
           <p className="text-xl text-gray-400">Smart features that boost guest satisfaction and save time</p>

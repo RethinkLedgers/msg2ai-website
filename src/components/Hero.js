@@ -42,6 +42,12 @@ export default function Hero() {
   return (
     <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-800/20 via-transparent to-pink-800/20"></div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{
+          backgroundImage: 'url(/images/homepage_hero_main.png)'
+        }}
+      ></div>
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center">
           <div className="flex justify-center mb-6">
