@@ -114,6 +114,12 @@ The website uses a consistent purple/pink gradient theme:
 - ✅ Responsive design for all devices
 - ✅ Accessible with semantic HTML
 
+## Contact
+
+For questions, support, or business inquiries, please contact:
+
+**Email**: amille@rtledgers.com
+
 ## License
 
 © 2025 AI Ambassador. All rights reserved.
