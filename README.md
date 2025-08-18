@@ -24,6 +24,30 @@ A modern Next.js website showcasing AI Ambassador, smart AI solutions for hotels
 
 3. **Open your browser** and navigate to `http://localhost:3000`
 
+## Installation
+
+1. **Prerequisites:**
+   - Node.js v18 or later (recommended: v18, v20)
+   - npm v9 or later (comes with Node.js)
+
+2. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/msg2ai-website.git
+   cd msg2ai-website
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser** and go to `http://localhost:3000`
+
 ## Available Scripts
 
 - `npm run dev` - Start development server
