@@ -69,6 +69,8 @@ export const blogPosts = [
     <h2>The Evolution from Chatbots to AI Ambassadors</h2>
     <p>Traditional chatbots follow scripted responses, but AI Ambassadors understand context, emotion, and intent. They can handle complex requests, provide recommendations, and even anticipate guest needs based on historical data and preferences.</p>
 
+    <h2>Here’s how AI is making a difference:</h2>
+
     <h2>Real-World Applications</h2>
     <ul>
       <li><strong>Hotel Concierge Services:</strong> Instant recommendations for dining, entertainment, and local attractions</li>
@@ -76,6 +78,8 @@ export const blogPosts = [
       <li><strong>Guest Services:</strong> Room service orders, maintenance requests, and check-out procedures</li>
       <li><strong>Multilingual Support:</strong> Seamless communication in 100+ languages</li>
     </ul>
+
+    <h2>Key Use Cases: Leading by Example</h2>
 
     <h2>Impact on Guest Satisfaction</h2>
     <p>Hotels implementing AI Ambassador technology report:</p>
@@ -86,12 +90,16 @@ export const blogPosts = [
       <li>25% increase in ancillary revenue through personalized recommendations</li>
     </ul>
 
+    <h2>Why AI Matters: Key Benefits for the Hospitality Industry</h2>
+
     <h2>The Future of Hospitality Communication</h2>
-    <p>As AI technology continues to evolve, we can expect even more sophisticated interactions, predictive service delivery, and seamless integration with IoT devices throughout hospitality venues.</p>`,
+    <p>As AI technology continues to evolve, we can expect even more sophisticated interactions, predictive service delivery, and seamless integration with IoT devices throughout hospitality venues.</p>
+
+    <h2>The Future of AI in Hospitality</h2>
+    <img src="/images/blog/AI-in-Hospitality-Enhancing-Guest-Experience-and-Operations/the-future-of-ai-in-hospitality.png" alt="The Future of AI in Hospitality" style="margin: 24px 0; width: 100%; max-width: 700px; border-radius: 16px;"/>`,
     videoUrl: 'https://youtube.com/watch?v=hospitality-ai-demo',
     images: [
-      '/images/blog/ai-hospitality-guest-operations.png',
-      '/images/blog/ai-powered-guest-experiences.jpg'
+      '/images/blog/AI-in-Hospitality-Enhancing-Guest-Experience-and-Operations/ai-hospitality-guest-operations.png'
     ]
   },
   {
