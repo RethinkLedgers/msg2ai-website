@@ -90,7 +90,7 @@ export const blogPosts = [
     <p>As AI technology continues to evolve, we can expect even more sophisticated interactions, predictive service delivery, and seamless integration with IoT devices throughout hospitality venues.</p>`,
     videoUrl: 'https://youtube.com/watch?v=hospitality-ai-demo',
     images: [
-      '/images/blog/ai-hospitality-guest-operations.jpg',
+      '/images/blog/ai-hospitality-guest-operations.png',
       '/images/blog/ai-powered-guest-experiences.jpg'
     ]
   },
@@ -216,8 +216,8 @@ export const blogPosts = [
     <p>Compared to traditional marketing channels, AI-powered text messaging is highly cost-effective while delivering excellent results. Hotels can reach their target audience directly and measure the effectiveness of their campaigns in real-time.</p>`,
     videoUrl: 'https://youtube.com/watch?v=ai-messaging-demo',
     images: [
-      '/images/blog/brand-awareness-ai-messaging.jpg',
-      '/images/blog/ai-hospitality-guest-operations.jpg'
+      '/images/blog/brand-awareness-ai-messaging.png',
+      '/images/blog/ai-hospitality-guest-operations.png'
     ]
   }
 ]
