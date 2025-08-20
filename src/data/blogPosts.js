@@ -143,30 +143,32 @@ export const blogPosts = [
     category: 'Case Study',
     date: 'January 10, 2025',
     excerpt: 'See how msg2ai\'s AI Assistant revolutionized attendee engagement at Charlotte\'s premier startup conference, providing personalized recommendations and real-time insights.',
-    content: `<p>The energy at Venture135 in Charlotte was electric, and I had the pleasure of being right in the middle of it all. This annual conference has always been a hub for innovation, and this year was no exception. With over 40 startups pitching their bold ideas, the atmosphere was brimming with creativity and future-changing technologies. But one of the most exciting moments for me was seeing our very own AI-powered text Tool in action as the official AI Assistant for the event.</p>
+    content: `<img src="/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/hero-image.png" alt="Venture135 Conference AI Assistant" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
 
-    <h2>Revolutionizing Conference Engagement</h2>
+    <p>The energy at Venture135 in Charlotte was electric, and I had the pleasure of being right in the middle of it all. This annual conference has always been a hub for innovation, and this year was no exception. With over 40 startups pitching their bold ideas, the atmosphere was brimming with creativity and future-changing technologies. But one of the most exciting moments for me was seeing our very own AI-powered text Tool in action as the official AI Assistant for the event.</p>
+
+    <img src="/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/2.png" alt="AI Assistant in Action at Venture135" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
     <p>Venture135 is known for bringing together an eclectic mix of fintech, insurtech, and healthtech startups, each eager to showcase their groundbreaking solutions to investors and industry leaders. This year, alongside impressive startup pitches, our AI Assistant took center stage by revolutionizing attendees' engagement with the conference. I couldn't have been prouder to watch our technology not only support the conference's smooth functioning but also add a personalized, dynamic layer to the experience.</p>
 
-    <h2>Seamless Conference Experience</h2>
     <p>The AI Assistant was designed to make the conference experience seamless and efficient, and it delivered beyond expectations. Attendees could access real-time information about schedules, speaker bios, and session details, all at the touch of a button—or rather, a simple text. Personalized recommendations helped each attendee curate their experience, suggesting sessions and networking opportunities based on their preferences.</p>
 
     <p>This meant that every attendee could make the most of their time at Venture135, discovering the startups and investors most relevant to them.</p>
 
-    <h2>Comprehensive Company Information</h2>
+    <img src="/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/1.png" alt="Venture135 Conference Experience" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
     <p>Attendees were particularly impressed with the AI Assistant's ability to provide instant, detailed information about the participating companies. The Assistant offered in-depth profiles, including company backgrounds, product offerings, and recent developments by leveraging a comprehensive knowledge base enriched with public data and specialized insights from platforms like crowdworks.com. This feature enabled attendees to make informed decisions about which sessions to attend and which startups to engage with, significantly enhancing their overall conference experience.</p>
 
-    <h2>Real-Time Feedback and Analytics</h2>
     <p>Another standout feature was the collection of real-time feedback. This allowed the organizers to get a sense of which sessions resonated most with attendees, giving valuable insights for future events. Plus, thanks to features like event analytics, organizers could see detailed reports on session popularity and attendee engagement—helping them make data-driven decisions to enhance the conference experience even further.</p>
 
-    <h2>Transforming Event Experiences</h2>
     <p>It's not every day that you see your work being used in real-world settings, making a tangible difference. The Venture135 conference demonstrated how AI isn't just a buzzword; it can fundamentally transform the way people experience events, making everything from information retrieval to networking smoother and more engaging. It was thrilling to witness our AI Assistant turn what could be a complex, information-overloaded event into a streamlined, customized, and highly interactive experience.</p>
 
     <p>If you're interested in learning more about how our AI Assistant can elevate your next event, feel free to reach out to us. We're just getting started in revolutionizing conferences—one AI-powered interaction at a time.</p>`,
     videoUrl: 'https://youtube.com/watch?v=venture135-demo',
     images: [
-      '/images/blog/homepage_hero_blog_en_venture135_conference_hero.png',
-      '/images/blog/venture135-conference-transformation.jpg'
+      '/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/hero-image.png',
+      '/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/2.png',
+      '/images/blog/How-our-AI-Assistant-Transformed-the-Venture135-Conference/1.png'
     ]
   },
   {
