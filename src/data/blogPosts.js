@@ -5,9 +5,14 @@ export const blogPosts = [
     category: 'Innovation',
     date: 'January 20, 2025',
     excerpt: 'Explore how AI-driven technology and blockchain are transforming hotel experiences with autonomous, intelligent agents that create hyper-personalized stays.',
-    content: `<p>Imagine a world where AI-driven technology and blockchain for hotels revolutionize your hotel experience. The lights automatically adjust to your preferences, the room temperature is perfect, and your next meal is recommended—before you unpack. This is the New Agentic Future of hospitality, where advanced technologies like AI in hospitality and blockchain for hotels are revolutionizing how we travel, dine, and experience our stays. Here's how this decentralized hospitality industry shift is transforming AI in the hospitality sector.</p>
+    content: `<img src="/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/hero-image.png" alt="The New Agentic Future of Hospitality" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
+    <p>Imagine a world where AI-driven technology and blockchain for hotels revolutionize your hotel experience. The lights automatically adjust to your preferences, the room temperature is perfect, and your next meal is recommended—before you unpack. This is the New Agentic Future of hospitality, where advanced technologies like AI in hospitality and blockchain for hotels are revolutionizing how we travel, dine, and experience our stays. Here's how this decentralized hospitality industry shift is transforming AI in the hospitality sector.</p>
 
     <h2>What is the New Agentic Future?</h2>
+
+    <img src="/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/what-is-the-new-agentic-future.png" alt="What is the New Agentic Future" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
     <p>The new agentic future envisions a world powered by autonomous, intelligent agents—AI-driven systems that work seamlessly across decentralized networks. These agents leverage cutting-edge technologies like blockchain for hotels, IoT, and machine learning to create adaptive, efficient, and hyper-personalized experiences. In simpler terms, it's about removing friction, enhancing transparency, and putting the power back into the hands of users and businesses alike.</p>
 
     <p>For the hospitality sector, this means reimagining everything from booking systems to guest interactions, operations, and sustainability. Let's explore how.</p>
@@ -44,18 +49,26 @@ export const blogPosts = [
     <p>One of the biggest challenges in hospitality is building trust. Blockchain and AI agents can help by creating tamper-proof records of transactions, guest reviews, and service quality. By integrating decentralized, agent-driven systems like AI in hospitality and blockchain for hotels, the industry can enhance efficiency, sustainability, and personalization.</p>
 
     <h2>Challenges and the Human Touch</h2>
+
+    <img src="/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/challenges-and-the-human-touch.png" alt="Challenges and the Human Touch" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
     <p>Of course, the new agentic future isn't without its challenges. Adopting these technologies will require significant investment, and smaller businesses may struggle to keep up. Privacy concerns related to data collection and AI-driven personalization need to be addressed.</p>
 
     <p>But perhaps the biggest challenge is balancing technology with the human touch. Hospitality is, at its core, about human connection. While AI and automation can enhance efficiency, they can't replace the warmth of a friendly smile or the intuition of a seasoned concierge. The key will be to integrate technology in a way that enhances, rather than replaces, the human touch.</p>
 
     <h2>The Future is Agentic</h2>
+
+    <img src="/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/the-future-is-agentic.png" alt="The Future is Agentic" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 8px;" />
+
     <p>The new agentic future is more than just a technological shift—it's a paradigm change in how we think about hospitality. By adopting decentralized, agent-driven systems such as AI in hospitality and blockchain for hotels, the industry can become more efficient, sustainable, and personalized.</p>
 
     <p>So, the next time you check into a hotel, don't be surprised if your room already feels like home. After all, in the new agentic future, the world of hospitality is designed just for you.</p>`,
     videoUrl: 'https://youtube.com/watch?v=agentic-future-demo',
     images: [
-      '/images/blog/homepage_hero_blog_en_agentic_future_travel_hero.png',
-      '/images/blog/agentic-future-travel-hotels.jpg'
+      '/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/hero-image.png',
+      '/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/what-is-the-new-agentic-future.png',
+      '/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/challenges-and-the-human-touch.png',
+      '/images/blog/How-the-New-Agentic-Future-is-Revolutionizing-Travel-and-Hotel-Experiences/the-future-is-agentic.png'
     ]
   },
   {
