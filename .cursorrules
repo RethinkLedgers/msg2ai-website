@@ -1,0 +1,256 @@
+# Cursor Rules for msg2ai-website
+
+## Project Overview
+This is a Next.js 15 website for msg2ai - an AI Ambassador Platform that provides intelligent AI solutions for hotels, vacation rentals, and events. The project uses React 19, Tailwind CSS, and focuses on hospitality industry applications.
+
+## Technology Stack
+- **Framework**: Next.js 15 (App Router)
+- **React**: React 19
+- **Styling**: Tailwind CSS with @tailwindcss/typography
+- **Icons**: Lucide React
+- **Language**: JavaScript (not TypeScript)
+- **Package Manager**: npm
+
+## File Structure & Organization
+
+### Directory Structure
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── blog/              # Blog pages
+│   │   └── [id]/          # Dynamic blog post pages
+│   ├── globals.css        # Global styles
+│   ├── layout.js          # Root layout
+│   └── page.js            # Homepage
+├── components/            # Reusable React components
+├── data/                  # Static data files (blog posts, etc.)
+└── public/               # Static assets
+    └── images/           # Image assets
+        └── blog/         # Blog-specific images
+```
+
+### Component Naming
+- Use PascalCase for component files: `Hero.js`, `Navbar.js`, `Footer.js`
+- Use descriptive names that reflect the component's purpose
+- Keep components focused and single-responsibility
+
+## Coding Standards
+
+### JavaScript/React
+- Use functional components with hooks
+- Prefer `'use client'` directive for client-side components
+- Use modern ES6+ syntax (arrow functions, destructuring, etc.)
+- Implement proper error boundaries and loading states
+- Use meaningful variable and function names
+
+### Component Structure
+```javascript
+'use client'
+import { useState, useEffect } from 'react'
+import { IconName } from 'lucide-react'
+
+export default function ComponentName() {
+  // State and hooks
+  const [state, setState] = useState(initialValue)
+  
+  // Effects
+  useEffect(() => {
+    // Effect logic
+  }, [dependencies])
+  
+  // Event handlers
+  const handleEvent = () => {
+    // Handler logic
+  }
+  
+  // Render
+  return (
+    <section className="...">
+      {/* Component JSX */}
+    </section>
+  )
+}
+```
+
+### Styling with Tailwind CSS
+- Use Tailwind utility classes for styling
+- Follow mobile-first responsive design
+- Use semantic color classes (purple, pink, teal theme)
+- Implement proper spacing and typography scales
+- Use gradient backgrounds for visual appeal
+- Maintain consistent design patterns
+
+### Color Palette
+- **Primary**: Purple (`purple-400`, `purple-500`, `purple-600`, `purple-800`)
+- **Secondary**: Pink (`pink-400`, `pink-500`, `pink-600`, `pink-800`)
+- **Accent**: Teal (`teal-500`, `teal-600`)
+- **Neutral**: Gray scale (`gray-300`, `gray-400`, `gray-500`)
+- **Background**: Dark theme with gradients
+
+### Responsive Design
+- Mobile-first approach
+- Use responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
+- Test on multiple screen sizes
+- Ensure touch-friendly interactions
+
+## Content Management
+
+### Blog Posts
+- Store blog data in `src/data/blogPosts.js`
+- Use consistent data structure with: `id`, `title`, `category`, `date`, `excerpt`, `content`, `videoUrl`, `images`
+- Support HTML content in blog posts
+- Include proper meta descriptions and SEO content
+
+## Blog Post Guidelines
+- Each blog post must follow this structure:
+  1. **H1 Title** at the top (`# Title of Post`)
+  2. **Image** immediately after the title (from `/public/images/blog/`)
+  3. **Body/Paragraph** content below the image
+- **H2 Sections** should follow this structure:
+  - `## Subtitle`
+  - If the section includes an image: place the image immediately below the subtitle
+  - Then follow with paragraph/body text
+  - Some H2 sections may skip the image; that is acceptable
+- Use **Markdown** for posts.
+- Filenames must be **kebab-case** (e.g. `ai-in-hospitality.md`).
+
+## Blog Image Rules
+- All blog images must live under `public/images/blog/<post-slug>/`.
+- All Markdown image references must use root-absolute paths:
+  `![alt](/images/blog/<post-slug>/<filename>.<ext>)`
+- Filenames and folders are kebab-case. No spaces. Case must match exactly.
+- If an H2 section includes an image, place it immediately below the subtitle.
+
+### Images
+- Store images in `public/images/`
+- Use descriptive filenames
+- Optimize images for web (WebP format preferred)
+- Maintain consistent aspect ratios
+- Include alt text for accessibility
+
+## Performance & SEO
+
+### Next.js Best Practices
+- Use Next.js Image component for optimized images
+- Implement proper meta tags in layout.js
+- Use semantic HTML elements
+- Optimize for Core Web Vitals
+- Implement proper loading states
+
+### SEO Guidelines
+- Use descriptive page titles and meta descriptions
+- Implement proper heading hierarchy (h1, h2, h3)
+- Include structured data where appropriate
+- Optimize for hospitality industry keywords
+- Ensure fast loading times
+
+## Accessibility
+
+### Standards
+- Follow WCAG 2.1 AA guidelines
+- Use semantic HTML elements
+- Provide alt text for images
+- Ensure proper color contrast
+- Implement keyboard navigation
+- Use ARIA labels where needed
+
+### Testing
+- Test with screen readers
+- Verify keyboard navigation
+- Check color contrast ratios
+- Test with different zoom levels
+
+## Code Quality
+
+### Linting & Formatting
+- Use ESLint with Next.js configuration
+- Follow consistent code formatting
+- Remove unused imports and variables
+- Use meaningful comments for complex logic
+
+### Error Handling
+- Implement proper error boundaries
+- Use try-catch blocks for async operations
+- Provide user-friendly error messages
+- Log errors appropriately
+
+## Development Workflow
+
+### Git Practices
+- Use descriptive commit messages
+- Create feature branches for new development
+- Review code before merging
+- Keep commits atomic and focused
+
+### Testing
+- Test components in isolation
+- Verify responsive behavior
+- Check cross-browser compatibility
+- Test user interactions and flows
+
+## Industry-Specific Guidelines
+
+### Hospitality Focus
+- Emphasize guest experience and satisfaction
+- Highlight 24/7 availability and support
+- Focus on multilingual capabilities
+- Showcase industry-specific use cases
+- Use hospitality industry terminology
+
+### AI/Technology Messaging
+- Explain AI benefits clearly and simply
+- Focus on practical applications
+- Highlight efficiency and cost savings
+- Emphasize human-AI collaboration
+- Use case studies and examples
+
+## Deployment & Maintenance
+
+### Build Process
+- Use `npm run build` for production builds
+- Optimize images and assets
+- Minify CSS and JavaScript
+- Implement proper caching strategies
+
+### Monitoring
+- Track Core Web Vitals
+- Monitor user engagement metrics
+- Check for broken links and images
+- Review performance regularly
+
+## Common Patterns
+
+### Hero Sections
+- Use gradient backgrounds
+- Include clear call-to-action buttons
+- Implement animated elements
+- Focus on value proposition
+
+### Feature Sections
+- Use icons from Lucide React
+- Implement grid layouts
+- Include hover effects
+- Provide clear descriptions
+
+### Blog Integration
+- Use dynamic routing for blog posts
+- Implement proper meta tags
+- Include social sharing
+- Optimize for readability
+
+## Troubleshooting
+
+### Common Issues
+- Check for missing `'use client'` directives
+- Verify Tailwind CSS classes are included in config
+- Ensure proper import paths
+- Check for console errors
+
+### Performance Issues
+- Optimize images and assets
+- Implement proper loading states
+- Use React.memo for expensive components
+- Monitor bundle size
+
+Remember: This project serves the hospitality industry with AI solutions, so always prioritize user experience, accessibility, and clear communication of value propositions.
