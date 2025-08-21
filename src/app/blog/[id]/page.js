@@ -4,8 +4,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
-export default function BlogPostPage({ params }) {
-  const post = blogPosts.find(p => p.id === params.id);
+export default async function BlogPostPage({ params }) {
+  const { id } = await params;
+  const post = blogPosts.find(p => p.id === id);
   
   if (!post) {
     notFound();
@@ -52,35 +53,10 @@ export default function BlogPostPage({ params }) {
 
         {/* Article Content */}
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-purple-700/30 p-8">
-          {/* Featured Image */}
-          {post.images && post.images.length > 0 && (
-            <div className="mb-8">
-              <img 
-                src={post.images[0]} 
-                alt={post.title}
-                className="w-full h-64 md:h-96 object-cover rounded-lg"
-              />
-            </div>
-          )}
-          
           <div 
             className="prose prose-invert prose-purple max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          
-          {/* Additional Images */}
-          {post.images && post.images.length > 1 && (
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {post.images.slice(1).map((image, index) => (
-                <img 
-                  key={index}
-                  src={image} 
-                  alt={`${post.title} - Image ${index + 2}`}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Related Posts */}
