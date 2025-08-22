@@ -12,12 +12,42 @@ export default function ScheduleDemo() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real implementation, this would connect to AI Ambassador's scheduling system
-    console.log('Demo scheduled:', formData)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    
+    try {
+      const response = await fetch('/api/demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        console.log('Demo request submitted:', result)
+        setIsSubmitted(true)
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            vertical: '',
+            message: ''
+          })
+        }, 5000)
+      } else {
+        console.error('Failed to submit demo request:', result.error)
+        alert('Failed to submit demo request. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting demo request:', error)
+      alert('An error occurred. Please try again later.')
+    }
   }
 
   const handleChange = (e) => {
