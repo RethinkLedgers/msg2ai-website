@@ -300,7 +300,7 @@ export default function Pricing() {
 
 // ===== src/components/Footer.js =====
 export const FooterComponent = `import Link from 'next/link'
-import { Mail, Phone, Twitter, Linkedin, Facebook, Instagram, Youtube } from 'lucide-react'
+import { Mail, Phone, X as XIcon, Linkedin, Facebook, Instagram, Youtube } from 'lucide-react'
 import Logo from './Logo'
 
 export default function Footer() {
@@ -312,8 +312,8 @@ export default function Footer() {
             <Logo />
             <p className="text-gray-400 mt-4 mb-6">Revolutionizing customer communication with AI Ambassador technology for hotels, events, and businesses worldwide.</p>
             <div className="flex space-x-4">
-              <Link href="https://twitter.com/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
-                <Twitter className="h-6 w-6" />
+              <Link href="https://x.com/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
+                <XIcon className="h-6 w-6" />
               </Link>
               <Link href="https://linkedin.com/company/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Linkedin className="h-6 w-6" />
