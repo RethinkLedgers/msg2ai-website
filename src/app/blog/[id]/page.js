@@ -1,4 +1,3 @@
-'use client';
 import { blogPosts } from '@/data/blogPosts';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';

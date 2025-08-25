@@ -17,13 +17,13 @@ export default function Footer() {
               <Link href="https://linkedin.com/company/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Linkedin className="h-6 w-6" />
               </Link>
-              <Link href="https://facebook.com/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <Link href="https://www.facebook.com/profile.php?id=61565193947221" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Facebook className="h-6 w-6" />
               </Link>
               <Link href="https://instagram.com/msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="https://youtube.com/@msg2ai" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <Link href="https://www.youtube.com/@AI-Ambassador-xyz" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Youtube className="h-6 w-6" />
               </Link>
             </div>
@@ -32,8 +32,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Product</h4>
             <ul className="space-y-2">
-              <li><Link href="/features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
-              <li><Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href="/#features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
+              <li><Link href="/#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
               <li><Link href="/api-docs" className="text-gray-400 hover:text-white transition-colors">API Documentation</Link></li>
               <li><Link href="/integrations" className="text-gray-400 hover:text-white transition-colors">Integrations</Link></li>
               <li><Link href="/roadmap" className="text-gray-400 hover:text-white transition-colors">Roadmap</Link></li>
