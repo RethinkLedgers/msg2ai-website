@@ -19,3 +19,4 @@ const BlogCarousel = dynamic(() => import('./BlogCarousel'), {
 export default function ClientBlogCarousel() {
   return <BlogCarousel />
 }
+

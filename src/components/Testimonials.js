@@ -9,7 +9,7 @@ const testimonials = [
     industry: "Hotels",
     icon: Building2,
     rating: 5,
-    quote: "AI Ambassador has transformed our guest experience completely. We're now able to provide 24/7 multilingual support that our international guests absolutely love. Guest satisfaction scores have increased by 35% since implementing msg2ai.",
+    quote: "AI Ambassador has transformed our guest experience completely. We're now able to provide 24/7 multilingual support that our international guests absolutely love. Guest satisfaction scores have increased by 35% since implementing AI Ambassador.",
     image: "/api/placeholder/80/80",
     metrics: "35% increase in guest satisfaction"
   },
@@ -21,7 +21,7 @@ const testimonials = [
     industry: "Vacation Rentals",
     icon: Home,
     rating: 5,
-    quote: "The AI Assistant handles check-in instructions, local recommendations, and maintenance requests seamlessly. It's like having a dedicated concierge for each property. Our guests feel taken care of even when we're not physically present.",
+    quote: "The AI Assistant handles local recommendations and maintenance requests seamlessly. It's like having a dedicated concierge for each property. Our guests feel taken care of even when we're not physically present.",
     image: "/api/placeholder/80/80",
     metrics: "50% reduction in manual inquiries"
   },
@@ -33,7 +33,7 @@ const testimonials = [
     industry: "Events",
     icon: Calendar,
     rating: 5,
-    quote: "msg2ai's AI Assistant was a game-changer at our conference. Attendees could instantly access speaker information, schedules, and networking opportunities. The real-time feedback collection helped us optimize the event on the fly.",
+    quote: "AI Ambassador's AI Assistant was a game-changer at our conference. Attendees could instantly access speaker information, schedules, and networking opportunities. The real-time feedback collection helped us optimize the event on the fly.",
     image: "/api/placeholder/80/80",
     metrics: "90% attendee engagement rate"
   },
@@ -72,6 +72,18 @@ const testimonials = [
     quote: "Guests love the instant responses they get about local attractions, restaurants, and activities. The AI speaks multiple languages, which is perfect for our international visitors. It's like having a local expert available 24/7.",
     image: "/api/placeholder/80/80",
     metrics: "Multi-language support"
+  },
+  {
+    id: 7,
+    name: "Juan Garzon",
+    title: "Founder & CEO",
+    company: "Garzon Ventures",
+    industry: "Events",
+    icon: Calendar,
+    rating: 5,
+    quote: "The AI assistant at our conference was instrumental in providing attendees with real-time updates on the agenda, details on presenting companies, and sponsor information, greatly enhancing their overall experience and engagement.",
+    image: "/images/Testimonials/juan-garzon.jpg",
+    metrics: "Enhanced attendee engagement"
   }
 ]
 
@@ -148,9 +160,9 @@ export default function Testimonials() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { label: 'Hotels & Resorts', value: '150+' },
-              { label: 'Vacation Rentals', value: '300+' },
-              { label: 'Events Powered', value: '50+' },
+              { label: 'Hotels & Resorts', value: '5' },
+              { label: 'Vacation Rentals', value: '24' },
+              { label: 'Events Powered', value: '15' },
               { label: 'Guest Satisfaction', value: '98%' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -167,7 +179,9 @@ export default function Testimonials() {
         <div className="text-center mt-16">
           <p className="text-lg text-gray-300 mb-6">Ready to join these success stories?</p>
           <a 
-            href="#demo"
+            href="https://cal.com/msg2ai/30minutes"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 text-white"
           >
             Schedule Your Demo
