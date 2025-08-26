@@ -1,9 +1,10 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { MessageSquare, Bot, ArrowRight, Play, Users, Sparkles, Building2, Calendar, Home } from 'lucide-react'
 
 export default function Hero() {
   const [activeChat, setActiveChat] = useState(0)
+  const videoRef = useRef(null)
   
   const industryVerticals = [
     {
@@ -41,6 +42,14 @@ export default function Hero() {
     }, 4000)
     return () => clearInterval(interval)
   }, [])
+
+  // Handle video switching
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.load()
+    }
+  }, [activeChat])
 
   return (
     <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -126,6 +135,8 @@ export default function Hero() {
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-purple-700/30 p-6">
                   <div className="rounded-xl overflow-hidden bg-gray-900 relative mb-4 max-w-md mx-auto" style={{ aspectRatio: '1080/1920' }}>
                     <video 
+                      ref={videoRef}
+                      key={industryVerticals[activeChat].video}
                       className="w-full h-full object-contain relative z-10"
                       controls
                       preload="metadata"
