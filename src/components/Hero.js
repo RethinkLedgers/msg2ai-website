@@ -14,7 +14,8 @@ export default function Hero() {
       description: "24/7 guest services, concierge automation, and multilingual support for enhanced guest experience.",
       features: ["Guest Check-in/out", "Room Service", "Concierge Services", "Local Recommendations"],
       color: "from-purple-500 to-pink-500",
-      video: "/videos/overview videos/hotel.mp4"
+      video: "/videos/overview videos/hotel.mp4",
+      thumbnail: "/images/overview thumbnails/hotel.png"
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export default function Hero() {
       description: "Streamlined guest communication, automated check-in processes, and instant local recommendations.",
       features: ["Property Access", "Local Guides", "Maintenance Requests", "Check-out Process"],
       color: "from-purple-400 to-pink-400",
-      video: "/videos/overview videos/vacation-rental.mp4"
+      video: "/videos/overview videos/vacation-rental.mp4",
+      thumbnail: "/images/overview thumbnails/vacation-rental.png"
     },
     {
       id: 3,
@@ -32,7 +34,8 @@ export default function Hero() {
       description: "Manage attendee inquiries, provide real-time updates, and facilitate networking opportunities.",
       features: ["Event Information", "Networking", "Schedule Updates", "Venue Navigation"],
       color: "from-purple-600 to-pink-600",
-      video: "/videos/overview videos/event.mp4"
+      video: "/videos/overview videos/event.mp4",
+      thumbnail: "/images/overview thumbnails/event.png"
     }
   ]
 
@@ -140,6 +143,7 @@ export default function Hero() {
                       className="w-full h-full object-contain relative z-10"
                       controls
                       preload="metadata"
+                      poster={industryVerticals[activeChat].thumbnail}
                       width="1080"
                       height="1920"
                     >
