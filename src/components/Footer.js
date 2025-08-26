@@ -34,9 +34,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/#features" className="text-gray-400 hover:text-white transition-colors">Features</Link></li>
               <li><Link href="/#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link href="/api-docs" className="text-gray-400 hover:text-white transition-colors">API Documentation</Link></li>
-              <li><Link href="/integrations" className="text-gray-400 hover:text-white transition-colors">Integrations</Link></li>
-              <li><Link href="/roadmap" className="text-gray-400 hover:text-white transition-colors">Roadmap</Link></li>
             </ul>
           </div>
           
@@ -45,8 +42,6 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/press" className="text-gray-400 hover:text-white transition-colors">Press Kit</Link></li>
               <li><Link href="/partners" className="text-gray-400 hover:text-white transition-colors">Partners</Link></li>
             </ul>
           </div>
@@ -54,9 +49,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link href="/status" className="text-gray-400 hover:text-white transition-colors">System Status</Link></li>
               <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
@@ -70,10 +63,6 @@ export default function Footer() {
               <a href="mailto:info@msg2ai.xyz" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
                 info@msg2ai.xyz
-              </a>
-              <a href="tel:+18884458333" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center">
-                <Phone className="h-4 w-4 mr-2" />
-                +1 (888) 445-8333
               </a>
             </div>
           </div>

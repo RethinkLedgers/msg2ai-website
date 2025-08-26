@@ -254,3 +254,16 @@ export default function ComponentName() {
 - Monitor bundle size
 
 Remember: This project serves the hospitality industry with AI solutions, so always prioritize user experience, accessibility, and clear communication of value propositions.
+
+{
+  "rules": [
+    {
+      "when": "*.md",
+      "format": {
+        "video": {
+          "template": "<video width=\"1080\" height=\"1920\" controls>\n  <source src=\"{{src}}\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>"
+        }
+      }
+    }
+  ]
+}

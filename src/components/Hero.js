@@ -12,7 +12,8 @@ export default function Hero() {
       title: "Hotels",
       description: "24/7 guest services, concierge automation, and multilingual support for enhanced guest experience.",
       features: ["Guest Check-in/out", "Room Service", "Concierge Services", "Local Recommendations"],
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      video: "/videos/overview videos/hotel.mp4"
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ export default function Hero() {
       title: "Vacation Rentals",
       description: "Streamlined guest communication, automated check-in processes, and instant local recommendations.",
       features: ["Property Access", "Local Guides", "Maintenance Requests", "Check-out Process"],
-      color: "from-purple-400 to-pink-400"
+      color: "from-purple-400 to-pink-400",
+      video: "/videos/overview videos/vacation-rental.mp4"
     },
     {
       id: 3,
@@ -28,7 +30,8 @@ export default function Hero() {
       title: "Events & Conferences",
       description: "Manage attendee inquiries, provide real-time updates, and facilitate networking opportunities.",
       features: ["Event Information", "Networking", "Schedule Updates", "Venue Navigation"],
-      color: "from-purple-600 to-pink-600"
+      color: "from-purple-600 to-pink-600",
+      video: "/videos/overview videos/event.mp4"
     }
   ]
 
@@ -121,26 +124,17 @@ export default function Hero() {
               {/* Active Vertical Video */}
               <div className="relative">
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-purple-700/30 p-6">
-                  <div className="aspect-video rounded-xl overflow-hidden bg-gray-900 relative mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
-                    {/* Placeholder for AI Ambassador videos - replace with actual video URLs */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                      <div className="text-center">
-                        <Play className="h-16 w-16 mx-auto mb-4 opacity-60" />
-                        <h4 className="text-lg font-semibold mb-2">{industryVerticals[activeChat].title} Demo</h4>
-                        <p className="text-sm opacity-75">AI Ambassador in action for {industryVerticals[activeChat].title.toLowerCase()}</p>
-                      </div>
-                    </div>
-                    {/* Replace this placeholder with actual video when URLs are provided */}
-                    {/* 
+                  <div className="rounded-xl overflow-hidden bg-gray-900 relative mb-4 max-w-md mx-auto" style={{ aspectRatio: '1080/1920' }}>
                     <video 
                       className="w-full h-full object-contain relative z-10"
                       controls
-                      poster="/video-thumbnails/hotels-demo.jpg"
+                      preload="metadata"
+                      width="1080"
+                      height="1920"
                     >
-                      <source src="VIDEO_URL_HERE" type="video/mp4" />
+                      <source src={industryVerticals[activeChat].video} type="video/mp4" />
+                      Your browser does not support the video tag.
                     </video>
-                    */}
                   </div>
                   <div className="text-center">
                     <h4 className="text-xl font-semibold mb-2">{industryVerticals[activeChat].title} Solution</h4>

@@ -49,41 +49,30 @@ const testimonials = [
     image: "/api/placeholder/80/80",
     metrics: "40% operational efficiency gain"
   },
+
   {
     id: 5,
-    name: "James Park",
-    title: "Conference Organizer",
-    company: "Tech Innovation Summit",
-    industry: "Events",
-    icon: Calendar,
-    rating: 5,
-    quote: "The AI Assistant provided personalized recommendations for each attendee based on their interests. It was like having a personal networking coordinator for 500+ participants. Absolutely revolutionary for event management.",
-    image: "/api/placeholder/80/80",
-    metrics: "500+ participants served"
-  },
-  {
-    id: 6,
-    name: "Maria Gonzalez",
-    title: "Vacation Rental Host",
-    company: "Seaside Escapes",
-    industry: "Vacation Rentals",
-    icon: Home,
-    rating: 5,
-    quote: "Guests love the instant responses they get about local attractions, restaurants, and activities. The AI speaks multiple languages, which is perfect for our international visitors. It's like having a local expert available 24/7.",
-    image: "/api/placeholder/80/80",
-    metrics: "Multi-language support"
-  },
-  {
-    id: 7,
     name: "Juan Garzon",
-    title: "Founder & CEO",
-    company: "Garzon Ventures",
+    title: "Conference Organizer",
+    company: "Seed the South",
     industry: "Events",
     icon: Calendar,
     rating: 5,
     quote: "The AI assistant at our conference was instrumental in providing attendees with real-time updates on the agenda, details on presenting companies, and sponsor information, greatly enhancing their overall experience and engagement.",
     image: "/images/Testimonials/juan-garzon.jpg",
     metrics: "Enhanced attendee engagement"
+  },
+  {
+    id: 6,
+    name: "Tatyana Thurston",
+    title: "Founder",
+    company: "Dexit Digital Accounts & Assets",
+    industry: "Vacation Rentals",
+    icon: Home,
+    rating: 5,
+    quote: "Guest communication has always been a top priority for our Seabrook Island property. Since integrating the AI assistant, the difference has been remarkable. Guests get fast, helpful answers, resulting in fewer repetitive questions and increased guest satisfaction.",
+    image: "/api/placeholder/80/80",
+    metrics: "Increased guest satisfaction"
   }
 ]
 
