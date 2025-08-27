@@ -3,53 +3,48 @@ import { Check } from 'lucide-react'
 const pricingPlans = [
   {
     name: 'Starter',
-    price: '$99',
-    period: '/month',
-    description: 'Perfect for small businesses',
+    originalPrice: '$39.99/Month',
+    price: '$9.99',
+    period: '/Month',
+    discount: '-75% off',
     features: [
-      '1,000 AI conversations/month',
-      '1 AI Ambassador',
-      'SMS & WhatsApp integration',
-      'Basic analytics',
-      'Email support',
-      '5 team members'
+      '250 text messages',
+      'Email Support',
+      'Broadcast messages',
+      'Chat History',
+      'Support via AI Agent'
     ],
     cta: 'Start Free Trial',
     popular: false
   },
   {
     name: 'Professional',
-    price: '$299',
-    period: '/month',
-    description: 'For growing businesses',
+    originalPrice: '$99.99/Month',
+    price: '$24.99',
+    period: '/Month',
+    discount: '-75% off',
     features: [
-      '10,000 AI conversations/month',
-      '3 AI Ambassadors',
-      'All messaging channels',
-      'Advanced analytics & insights',
-      'Priority support',
-      'Unlimited team members',
-      'Custom branding',
-      'API access'
+      'Includes Starter Plan benefits',
+      '1000 text messages',
+      'Sentiment Analysis',
+      'Enhanced Notifications',
+      'Enhanced Web Scraping',
+      'Custom Onboarding'
     ],
-    cta: 'Start Pro Trial',
+    cta: 'Start Free Trial',
     popular: true
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'Tailored for large organizations',
+    name: 'Expert',
+    price: 'Call Now',
+    discount: '-75% off',
     features: [
-      'Unlimited conversations',
-      'Unlimited AI Ambassadors',
-      'White-label solution',
-      'Dedicated account manager',
-      '24/7 phone support',
-      'SLA guarantee',
-      'Custom integrations',
-      'On-premise deployment option'
+      'Includes Professional Plan benefits',
+      '5000 text messages',
+      'Onboarding Assistance',
+      'Custom pricing for multiple properties or conference events'
     ],
-    cta: 'Contact Sales',
+    cta: 'Start Free Trial',
     popular: false
   }
 ]
@@ -72,12 +67,30 @@ export default function Pricing() {
           {pricingPlans.map((plan, index) => (
             <div key={index} className={`relative rounded-2xl ${plan.popular ? 'scale-105' : ''}`}>
               <div className={`h-full bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border ${plan.popular ? 'border-purple-600' : 'border-purple-700/30'} hover:border-purple-600/50 transition-all duration-300`}>
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{plan.name}</h3>
+                
+                {plan.originalPrice && (
+                  <div className="mb-2">
+                    <span className="text-gray-400 line-through">{plan.originalPrice}</span>
+                    <span className="ml-2 bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                      {plan.discount}
+                    </span>
+                  </div>
+                )}
+                
+                {!plan.originalPrice && plan.discount && (
+                  <div className="mb-2">
+                    <span className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                      {plan.discount}
+                    </span>
+                  </div>
+                )}
+                
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-white">{plan.price}</span>
                   {plan.period && <span className="text-gray-400">{plan.period}</span>}
                 </div>
-                <p className="text-gray-400 mb-6">{plan.description}</p>
+                
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
@@ -86,11 +99,8 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full py-3 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
-                    : 'border border-purple-600 hover:border-purple-500 hover:bg-purple-900/30'
-                }`}>
+                
+                <button className="w-full py-3 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 bg-white text-black hover:bg-gray-100">
                   {plan.cta}
                 </button>
               </div>
