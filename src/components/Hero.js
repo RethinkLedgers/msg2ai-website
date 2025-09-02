@@ -4,6 +4,8 @@ import { MessageSquare, Bot, ArrowRight, Play, Users, Sparkles, Building2, Calen
 
 export default function Hero() {
   const [activeChat, setActiveChat] = useState(0)
+  const [videosLoaded, setVideosLoaded] = useState(new Set())
+  const [videoErrors, setVideoErrors] = useState(new Set())
   
   const industryVerticals = [
     {
@@ -12,7 +14,8 @@ export default function Hero() {
       title: "Hotels",
       description: "24/7 guest services, concierge automation, and multilingual support for enhanced guest experience.",
       features: ["Guest Check-in/out", "Room Service", "Concierge Services", "Local Recommendations"],
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      videoSlug: "hotels"
     },
     {
       id: 2,
@@ -20,7 +23,8 @@ export default function Hero() {
       title: "Vacation Rentals",
       description: "Streamlined guest communication, automated check-in processes, and instant local recommendations.",
       features: ["Property Access", "Local Guides", "Maintenance Requests", "Check-out Process"],
-      color: "from-purple-400 to-pink-400"
+      color: "from-purple-400 to-pink-400",
+      videoSlug: "vacation-rentals"
     },
     {
       id: 3,
@@ -28,7 +32,8 @@ export default function Hero() {
       title: "Events & Conferences",
       description: "Manage attendee inquiries, provide real-time updates, and facilitate networking opportunities.",
       features: ["Event Information", "Networking", "Schedule Updates", "Venue Navigation"],
-      color: "from-purple-600 to-pink-600"
+      color: "from-purple-600 to-pink-600",
+      videoSlug: "events-conferences"
     }
   ]
 
@@ -38,6 +43,31 @@ export default function Hero() {
     }, 4000)
     return () => clearInterval(interval)
   }, [])
+
+  // Preload next video
+  useEffect(() => {
+    const nextIndex = (activeChat + 1) % industryVerticals.length
+    const nextVideo = industryVerticals[nextIndex]
+    const videoSrc = `/videos/demos/${nextVideo.videoSlug}-demo.mp4`
+    
+    if (!videosLoaded.has(nextVideo.id) && !videoErrors.has(nextVideo.id)) {
+      const video = document.createElement('video')
+      video.preload = 'metadata'
+      video.src = videoSrc
+      
+      video.addEventListener('loadedmetadata', () => {
+        setVideosLoaded(prev => new Set([...prev, nextVideo.id]))
+      })
+      
+      video.addEventListener('error', () => {
+        setVideoErrors(prev => new Set([...prev, nextVideo.id]))
+      })
+    }
+  }, [activeChat, videosLoaded, videoErrors])
+
+  const handleVideoError = (videoId) => {
+    setVideoErrors(prev => new Set([...prev, videoId]))
+  }
 
   return (
     <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -122,25 +152,40 @@ export default function Hero() {
               <div className="relative">
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-purple-700/30 p-6">
                   <div className="aspect-video rounded-xl overflow-hidden bg-gray-900 relative mb-4">
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
-                    {/* Placeholder for AI Ambassador videos - replace with actual video URLs */}
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                      <div className="text-center">
-                        <Play className="h-16 w-16 mx-auto mb-4 opacity-60" />
-                        <h4 className="text-lg font-semibold mb-2">{industryVerticals[activeChat].title} Demo</h4>
-                        <p className="text-sm opacity-75">AI Ambassador in action for {industryVerticals[activeChat].title.toLowerCase()}</p>
+                    {!videoErrors.has(industryVerticals[activeChat].id) ? (
+                      <video 
+                        key={`${industryVerticals[activeChat].id}-${activeChat}`}
+                        className="w-full h-full object-contain relative z-10"
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={`/video-thumbnails/${industryVerticals[activeChat].videoSlug}-demo.jpg`}
+                        onError={() => handleVideoError(industryVerticals[activeChat].id)}
+                        onLoadedMetadata={() => {
+                          setVideosLoaded(prev => new Set([...prev, industryVerticals[activeChat].id]))
+                        }}
+                      >
+                        <source 
+                          src={`/videos/demos/${industryVerticals[activeChat].videoSlug}-demo.mp4`} 
+                          type="video/mp4" 
+                        />
+                        <source 
+                          src={`/videos/demos/${industryVerticals[activeChat].videoSlug}-demo.webm`} 
+                          type="video/webm" 
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      /* Fallback content when video fails to load */
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
+                        <div className="text-center text-gray-400">
+                          <Play className="h-16 w-16 mx-auto mb-4 opacity-60" />
+                          <h4 className="text-lg font-semibold mb-2">{industryVerticals[activeChat].title} Demo</h4>
+                          <p className="text-sm opacity-75">Video coming soon</p>
+                          <p className="text-xs opacity-50 mt-2">AI Ambassador in action for {industryVerticals[activeChat].title.toLowerCase()}</p>
+                        </div>
                       </div>
-                    </div>
-                    {/* Replace this placeholder with actual video when URLs are provided */}
-                    {/* 
-                    <video 
-                      className="w-full h-full object-contain relative z-10"
-                      controls
-                      poster="/video-thumbnails/hotels-demo.jpg"
-                    >
-                      <source src="VIDEO_URL_HERE" type="video/mp4" />
-                    </video>
-                    */}
+                    )}
                   </div>
                   <div className="text-center">
                     <h4 className="text-xl font-semibold mb-2">{industryVerticals[activeChat].title} Solution</h4>
