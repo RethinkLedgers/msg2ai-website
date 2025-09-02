@@ -131,7 +131,11 @@ export default function Hero() {
               href="https://hello.msg2ai.xyz" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center text-white"
+              className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center text-white relative z-10"
+              onClick={(e) => {
+                console.log('Get Started button clicked!');
+                // Let the default link behavior proceed
+              }}
             >
               <span className="font-bold">
                 <span className="text-white">Get Started with </span>
