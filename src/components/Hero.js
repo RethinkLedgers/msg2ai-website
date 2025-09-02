@@ -167,7 +167,7 @@ export default function Hero() {
               {/* Active Vertical Video */}
               <div className="relative">
                 <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-purple-700/30 p-6">
-                  <div className="aspect-video rounded-xl overflow-hidden bg-gray-900 relative mb-4">
+                  <div className="rounded-xl overflow-hidden bg-gray-900 relative mb-4 max-w-md mx-auto" style={{ aspectRatio: '9/16' }}>
                     {!videoErrors.has(industryVerticals[activeChat].id) ? (
                       <video 
                         key={`${industryVerticals[activeChat].id}-${activeChat}`}
@@ -175,19 +175,15 @@ export default function Hero() {
                         controls
                         playsInline
                         preload="metadata"
-                        poster={`/video-thumbnails/${industryVerticals[activeChat].videoSlug}-demo.jpg`}
+                        poster={industryVerticals[activeChat].thumbnail}
                         onError={() => handleVideoError(industryVerticals[activeChat].id)}
                         onLoadedMetadata={() => {
                           setVideosLoaded(prev => new Set([...prev, industryVerticals[activeChat].id]))
                         }}
                       >
                         <source 
-                          src={`/videos/demos/${industryVerticals[activeChat].videoSlug}-demo.mp4`} 
+                          src={industryVerticals[activeChat].video} 
                           type="video/mp4" 
-                        />
-                        <source 
-                          src={`/videos/demos/${industryVerticals[activeChat].videoSlug}-demo.webm`} 
-                          type="video/webm" 
                         />
                         Your browser does not support the video tag.
                       </video>
