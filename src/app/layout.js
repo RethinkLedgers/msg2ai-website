@@ -11,15 +11,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="preload"
-          href="/_next/static/media/e4af272ccee01ff0-s.p.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
