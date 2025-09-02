@@ -128,7 +128,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://www.ai-ambassador.xyz" 
+              href="https://hello.msg2ai.xyz" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-200 transform hover:scale-105 flex items-center justify-center text-white"
