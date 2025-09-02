@@ -7,11 +7,16 @@ import { stringify } from 'csv-stringify/sync';
 // Slack webhook URL for msg2ai-demo-requests channel
 const SLACK_WEBHOOK_URL = process.env.SLACK_DEMO_WEBHOOK_URL;
 
-// CSV file path
+// Check if we're in production (Vercel)
+const IS_PRODUCTION = process.env.NODE_ENV === 'production' || process.env.VERCEL;
+
+// CSV file path (only used in development)
 const CSV_FILE_PATH = path.join(process.cwd(), 'data', 'demo-requests.csv');
 
-// Ensure data directory exists
+// Ensure data directory exists (development only)
 async function ensureDataDirectory() {
+  if (IS_PRODUCTION) return; // Skip in production
+  
   const dataDir = path.join(process.cwd(), 'data');
   try {
     await fs.access(dataDir);
@@ -20,8 +25,10 @@ async function ensureDataDirectory() {
   }
 }
 
-// Read existing CSV data
+// Read existing CSV data (development only)
 async function readCSVData() {
+  if (IS_PRODUCTION) return []; // Return empty array in production
+  
   try {
     await fs.access(CSV_FILE_PATH);
     const fileContent = await fs.readFile(CSV_FILE_PATH, 'utf-8');
@@ -35,8 +42,10 @@ async function readCSVData() {
   }
 }
 
-// Write data to CSV
+// Write data to CSV (development only)
 async function writeCSVData(data) {
+  if (IS_PRODUCTION) return; // Skip in production
+  
   const csv = stringify(data, {
     header: true,
     columns: ['timestamp', 'name', 'email', 'company', 'vertical', 'message', 'status']
@@ -166,18 +175,23 @@ export async function POST(request) {
       status: 'pending'
     };
 
-    // Ensure data directory exists
-    await ensureDataDirectory();
+    // Only save to CSV in development
+    if (!IS_PRODUCTION) {
+      // Ensure data directory exists
+      await ensureDataDirectory();
 
-    // Read existing data
-    const existingData = await readCSVData();
-    
-    // Add new request
-    existingData.push(demoRequest);
-    
-    // Write updated data to CSV
-    await writeCSVData(existingData);
-    console.log('✅ Demo request saved to CSV');
+      // Read existing data
+      const existingData = await readCSVData();
+      
+      // Add new request
+      existingData.push(demoRequest);
+      
+      // Write updated data to CSV
+      await writeCSVData(existingData);
+      console.log('✅ Demo request saved to CSV');
+    } else {
+      console.log('📧 Running in production - skipping CSV storage');
+    }
 
     // Send to Slack (don't wait for it to complete)
     sendToSlack(formData).catch(error => {
@@ -205,9 +219,18 @@ export async function POST(request) {
   }
 }
 
-// GET endpoint to retrieve demo requests (for admin use)
+// GET endpoint to retrieve demo requests (for admin use - development only)
 export async function GET(request) {
   try {
+    // In production, return a message that this endpoint is not available
+    if (IS_PRODUCTION) {
+      return NextResponse.json({
+        success: false,
+        message: 'Demo request retrieval is only available in development. In production, demo requests are sent directly to Slack.',
+        data: []
+      });
+    }
+    
     // You might want to add authentication here
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '100');
