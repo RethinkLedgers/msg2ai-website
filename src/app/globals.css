@@ -11,3 +11,129 @@
     @apply bg-gray-900 text-white;
   }
 }
+
+@layer components {
+  /* Post Carousel Styles */
+  .post-carousel {
+    --slide-w: 260px;
+    --gap: 16px;
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(0,0,0,.12);
+    position: relative;
+    margin: 2rem auto;
+    max-width: min(1100px, 96vw);
+  }
+
+  .pc-track {
+    display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    padding: 4px 0 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .pc-track::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  .pc-slide {
+    flex: 0 0 var(--slide-w);
+    scroll-snap-align: start;
+    background: #0b0b0b;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 10px;
+    color: #eaeaea;
+  }
+  
+  .pc-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .pc-slide figcaption {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* Edge fade hints */
+  .post-carousel::before,
+  .post-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+  }
+  
+  .post-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  }
+  
+  .post-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+  }
+
+  /* Navigation arrows */
+  .pc-nav {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    border: 0;
+    width: 36px; 
+    height: 36px;
+    border-radius: 999px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  
+  .pc-nav:hover {
+    background: rgba(0,0,0,.8);
+  }
+  
+  .pc-prev { 
+    left: 6px; 
+  }
+  
+  .pc-next { 
+    right: 6px; 
+  }
+
+  /* Responsive design */
+  @media (max-width: 900px) { 
+    .post-carousel { 
+      --slide-w: 240px; 
+    } 
+  }
+  
+  @media (max-width: 640px) { 
+    .post-carousel { 
+      --slide-w: 80vw; 
+    } 
+  }
+
+  /* Motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .pc-track { 
+      scroll-behavior: auto; 
+    }
+  }
+}
