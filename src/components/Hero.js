@@ -6,6 +6,7 @@ export default function Hero() {
   const [activeChat, setActiveChat] = useState(0)
   const [videosLoaded, setVideosLoaded] = useState(new Set())
   const [videoErrors, setVideoErrors] = useState(new Set())
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const videoRef = useRef(null)
 
   
@@ -47,11 +48,14 @@ export default function Hero() {
   ]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveChat((prev) => (prev + 1) % industryVerticals.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [])
+    // Only rotate videos if no video is currently playing
+    if (!isVideoPlaying) {
+      const interval = setInterval(() => {
+        setActiveChat((prev) => (prev + 1) % industryVerticals.length)
+      }, 4000)
+      return () => clearInterval(interval)
+    }
+  }, [isVideoPlaying])
 
   // Preload next video
   useEffect(() => {
@@ -76,6 +80,16 @@ export default function Hero() {
 
   const handleVideoError = (videoId) => {
     setVideoErrors(prev => new Set([...prev, videoId]))
+  }
+
+  const handleVideoSwitch = (newIndex) => {
+    // Pause current video if playing
+    if (videoRef.current && !videoRef.current.paused) {
+      videoRef.current.pause()
+    }
+    // Reset playing state and switch video
+    setIsVideoPlaying(false)
+    setActiveChat(newIndex)
   }
   // Handle video switching
   useEffect(() => {
@@ -170,6 +184,7 @@ export default function Hero() {
                   <div className="rounded-xl overflow-hidden bg-gray-900 relative mb-4 max-w-md mx-auto" style={{ aspectRatio: '9/16' }}>
                     {!videoErrors.has(industryVerticals[activeChat].id) ? (
                       <video 
+                        ref={videoRef}
                         key={`${industryVerticals[activeChat].id}-${activeChat}`}
                         className="w-full h-full object-contain relative z-10"
                         controls
@@ -180,6 +195,9 @@ export default function Hero() {
                         onLoadedMetadata={() => {
                           setVideosLoaded(prev => new Set([...prev, industryVerticals[activeChat].id]))
                         }}
+                        onPlay={() => setIsVideoPlaying(true)}
+                        onPause={() => setIsVideoPlaying(false)}
+                        onEnded={() => setIsVideoPlaying(false)}
                       >
                         <source 
                           src={industryVerticals[activeChat].video} 
@@ -216,7 +234,7 @@ export default function Hero() {
                         ? 'border-purple-500/50 bg-gray-800/60 scale-105' 
                         : 'border-purple-700/20 hover:border-purple-600/30'
                     }`}
-                    onClick={() => setActiveChat(index)}
+                    onClick={() => handleVideoSwitch(index)}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${vertical.color}`}>
@@ -251,7 +269,7 @@ export default function Hero() {
                 {industryVerticals.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setActiveChat(index)}
+                    onClick={() => handleVideoSwitch(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === activeChat
                         ? 'bg-gradient-to-r from-purple-400 to-pink-400'
