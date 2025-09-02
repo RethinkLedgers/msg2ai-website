@@ -1,11 +1,12 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { MessageSquare, Bot, ArrowRight, Play, Users, Sparkles, Building2, Calendar, Home } from 'lucide-react'
+import { ArrowRight, Play, Sparkles, Building2, Calendar, Home } from 'lucide-react'
 
 export default function Hero() {
   const [activeChat, setActiveChat] = useState(0)
   const [videosLoaded, setVideosLoaded] = useState(new Set())
   const [videoErrors, setVideoErrors] = useState(new Set())
+  const videoRef = useRef(null)
 
   
   const industryVerticals = [
@@ -16,7 +17,9 @@ export default function Hero() {
       description: "24/7 guest services, concierge automation, and multilingual support for enhanced guest experience.",
       features: ["Guest Check-in/out", "Room Service", "Concierge Services", "Local Recommendations"],
       color: "from-purple-500 to-pink-500",
-      videoSlug: "hotels"
+      videoSlug: "hotels",
+      video: "/videos/overview videos/hotel.mp4",
+      thumbnail: "/images/overview thumbnails/hotel.png"
     },
     {
       id: 2,
@@ -25,7 +28,7 @@ export default function Hero() {
       description: "Streamlined guest communication, automated check-in processes, and instant local recommendations.",
       features: ["Property Access", "Local Guides", "Maintenance Requests", "Check-out Process"],
       color: "from-purple-400 to-pink-400",
-      videoSlug: "vacation-rentals"
+      videoSlug: "vacation-rentals",
       video: "/videos/overview videos/vacation-rental.mp4",
       thumbnail: "/images/overview thumbnails/vacation-rental.png"
 
@@ -37,7 +40,7 @@ export default function Hero() {
       description: "Manage attendee inquiries, provide real-time updates, and facilitate networking opportunities.",
       features: ["Event Information", "Networking", "Schedule Updates", "Venue Navigation"],
       color: "from-purple-600 to-pink-600",
-      videoSlug: "events-conferences"
+      videoSlug: "events-conferences",
       video: "/videos/overview videos/event.mp4",
       thumbnail: "/images/overview thumbnails/event.png"
     }
@@ -199,20 +202,6 @@ export default function Hero() {
                         </div>
                       </div>
                     )}
-                  <div className="rounded-xl overflow-hidden bg-gray-900 relative mb-4 max-w-md mx-auto" style={{ aspectRatio: '1080/1920' }}>
-                    <video 
-                      ref={videoRef}
-                      key={industryVerticals[activeChat].video}
-                      className="w-full h-full object-contain relative z-10"
-                      controls
-                      preload="metadata"
-                      poster={industryVerticals[activeChat].thumbnail}
-                      width="1080"
-                      height="1920"
-                    >
-                      <source src={industryVerticals[activeChat].video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
                   </div>
                   <div className="text-center">
                     <h4 className="text-xl font-semibold mb-2">{industryVerticals[activeChat].title} Solution</h4>
